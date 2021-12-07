@@ -43,21 +43,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={handleAdd} />
+              <CalcButton value={1}  onClick={handleAdd} />
               <CalcButton value={2}  onClick={handleapplyNumber}/>
-              <CalcButton value={3}/>
+              <CalcButton value={3}  onClick={handleapplyNumber}/>
             </div>
 
             <div className="row">
               <CalcButton value={4} onClick={handleapplyNumber}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={5} onClick={handleapplyNumber}/>
+              <CalcButton value={6} onClick={handleapplyNumber}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={handleapplyNumber}/>
+              <CalcButton value={8} onClick={handleapplyNumber}/>
+              <CalcButton value={9} onClick={handleapplyNumber}/>
             </div>
 
             <div className="row">
