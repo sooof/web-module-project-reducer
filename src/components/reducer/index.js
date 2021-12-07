@@ -1,4 +1,6 @@
 
+import {ADD_ONE} from "../action"
+
 export const initialState = {
     total: 0,
     operation: "+",
@@ -6,8 +8,12 @@ export const initialState = {
 }
 
   const reducer = (state, action) => {
-      switch (action.state){
-          
+    console.log("Here")
+      switch (action.type){
+        
+        case ADD_ONE:
+            console.log("3 Add One")
+            return {...state, total: state.total + action.payload}
         default:
             return state;
       }
