@@ -5,16 +5,21 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from './reducer';
-import {addOne} from './action'
+import {addOne, applyNumber} from './action'
 
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  
   const handleAdd = () =>{
     console.log("Add One")
-    dispatch(addOne(1))
+    dispatch(addOne())
   }
-
+  const handleapplyNumber = (value) => {
+    console.log("handleapplyNumber ", value) 
+    dispatch(applyNumber(value))
+  }
+  
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -39,12 +44,12 @@ function App() {
 
             <div className="row">
               <CalcButton value={1} onClick={handleAdd} />
-              <CalcButton value={2}/>
+              <CalcButton value={2}  onClick={handleapplyNumber}/>
               <CalcButton value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
+              <CalcButton value={4} onClick={handleapplyNumber}/>
               <CalcButton value={5}/>
               <CalcButton value={6}/>
             </div>
