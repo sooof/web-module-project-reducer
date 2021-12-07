@@ -17,6 +17,10 @@ function App() {
   }
   const handleapplyNumber = (value) => {
     console.log("handleapplyNumber ", value) 
+    dispatch(applyNumber(value))
+  }
+  const handleapplyOperation = (value) => {
+    console.log("handleapplyNumber ", value) 
     dispatch(change_Operation(value))
   }
   
@@ -61,9 +65,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"} onClick={handleapplyNumber}/>
-              <CalcButton value={"*"} onClick={handleapplyNumber}/>
-              <CalcButton value={"-"} onClick={handleapplyNumber}/>
+              <CalcButton value={"+"} onClick={handleapplyOperation}/>
+              <CalcButton value={"*"} onClick={handleapplyOperation}/>
+              <CalcButton value={"-"} onClick={handleapplyOperation}/>
             </div>
 
             <div className="row ce_button">
