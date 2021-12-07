@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION"
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY" 
 export const ADD_TO_MEMORY = "ADD_TO_MEMORY" 
 export const TOTAL_MEMORY = "TOTAL_MEMORY" 
+export const CLEAR_MEMORY = "CLEAR_MEMORY" 
 
 export const addOne = () => {
     console.log("2 Add One")
@@ -31,4 +32,8 @@ export const  addToMemory = (value) => {
 export const  totalMemory = (value) => {
     console.log("2 add to memory", value)
     return {type: TOTAL_MEMORY, payload: value}
+}
+export const  clearMemory = (value) => {
+    console.log("2 clear memory", value)
+    return {type: CLEAR_MEMORY, payload: value}
 }
