@@ -7,6 +7,19 @@ export const initialState = {
     memory: 0
 }
 
+const calcuOperation = (x,y,op)=>{
+    switch(op){
+        case '*':
+            return x * y
+        case '-':
+            return x - y
+        case '+':
+            return x + y
+        default:
+            return x + y
+    }
+}
+
   const reducer = (state, action) => {
     console.log("reducer Here")
       switch (action.type){
@@ -15,7 +28,7 @@ export const initialState = {
             return {...state, operation: action.payload}
         case APPLY_NUMBER:
             console.log("APPLY_NUMBER")
-            return {...state, total: state.total + action.payload}
+            return {...state, total: calcuOperation(state.total , action.payload, state.operation)}
         case ADD_ONE:
             console.log("Add One")
             return {...state, total: state.total + 1}
