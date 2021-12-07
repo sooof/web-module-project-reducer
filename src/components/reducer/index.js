@@ -1,5 +1,5 @@
 
-import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, ADD_TO_MEMORY} from "../action"
+import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, ADD_TO_MEMORY, TOTAL_MEMORY} from "../action"
 
 export const initialState = {
     total: 0,
@@ -25,6 +25,9 @@ export const initialState = {
         case ADD_TO_MEMORY:
             console.log("ADD_TO_MEMORY")
             return {...state, memory: state.total}
+        case TOTAL_MEMORY:
+            console.log("totalMemory")
+            return {...state, memory: state.total + state.memory}
         default:
             return state;
       }

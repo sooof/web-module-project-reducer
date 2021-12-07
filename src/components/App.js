@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from './reducer';
-import {addOne, applyNumber, change_Operation, clearDisplay, addToMemory} from './action'
+import {addOne, applyNumber, change_Operation, clearDisplay, addToMemory, totalMemory} from './action'
 
 
 function App() {
@@ -31,7 +31,11 @@ function App() {
     console.log("handleAddToMemoryChange")
     dispatch(addToMemory())
   }
-  
+  const handleTotalMemoryChange = () => {
+    console.log("handleTotalMemoryChange")
+    dispatch(totalMemory())
+  } 
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -50,7 +54,7 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleAddToMemoryChange}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={handleTotalMemoryChange}/>
               <CalcButton value={"MC"}/>
             </div>
 
