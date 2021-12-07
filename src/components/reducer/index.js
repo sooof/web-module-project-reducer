@@ -1,5 +1,5 @@
 
-import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY} from "../action"
+import {ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, ADD_TO_MEMORY} from "../action"
 
 export const initialState = {
     total: 0,
@@ -13,7 +13,6 @@ export const initialState = {
         case CHANGE_OPERATION:
             console.log("CHANGE_OPERATION")
             return {...state, operation: action.payload}
-
         case APPLY_NUMBER:
             console.log("APPLY_NUMBER")
             return {...state, total: state.total + action.payload}
@@ -22,7 +21,10 @@ export const initialState = {
             return {...state, total: state.total + 1}
         case CLEAR_DISPLAY:
             console.log("CLEAR_DISPLAY")
-            return {...state, total: 0,memory: 0 }        
+            return {...state, total: 0}    
+        case ADD_TO_MEMORY:
+            console.log("ADD_TO_MEMORY")
+            return {...state, memory: state.total}
         default:
             return state;
       }
